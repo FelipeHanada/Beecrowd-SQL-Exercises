@@ -1,0 +1,75 @@
+cells:
+  - kind: 1
+    value: https://judge.beecrowd.com/en/problems/view/2613
+    languageId: markdown
+  - kind: 2
+    value: "CREATE TABLE prices (\r
+
+      \  id numeric PRIMARY KEY,\r
+
+      \  categorie varchar(50),\r
+
+      \  value numeric\r
+
+      );\r
+
+      \r
+
+      \r
+
+      CREATE TABLE movies (\r
+
+      \  id numeric PRIMARY KEY,\r
+
+      \  name varchar(50),\r
+
+      \  id_prices numeric REFERENCES prices (id)\r
+
+      );\r
+
+      \r
+
+      INSERT INTO prices (id , categorie, value)\r
+
+      VALUES\r
+
+      \  (1,\t'Releases',\t3.50),\r
+
+      \  (2,\t'Bronze Seal',\t2.00),\r
+
+      \  (3,\t'Silver Seal',\t2.50),\r
+
+      \  (4,\t'Gold Seal',\t3.00),\r
+
+      \  (5,\t'Promotion',\t1.50);\r
+
+      \  \r
+
+      INSERT INTO movies (id, name, id_prices)\r
+
+      VALUES\r
+
+      \  (1,\t'Batman',\t3),\r
+
+      \  (2,\t'The Battle of the Dark River',\t3),\r
+
+      \  (3,\t'White Duck',\t5),\r
+
+      \  (4,\t'Breaking Barriers',\t4),\r
+
+      \  (5,\t'The Two Hours',\t2);"
+    languageId: oracle-sql
+  - kind: 2
+    value: "SELECT mv.id, mv.name\r
+
+      FROM movies mv\r
+
+      \    JOIN prices pr ON (mv.id_prices = pr.id)\r
+
+      WHERE pr.value < 2"
+    languageId: oracle-sql
+  - kind: 2
+    value: "DROP TABLE movies;\r
+
+      DROP TABLE prices;"
+    languageId: oracle-sql

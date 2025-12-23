@@ -1,0 +1,49 @@
+cells:
+  - kind: 1
+    value: https://judge.beecrowd.com/en/problems/view/2607
+    languageId: markdown
+  - kind: 2
+    value: "DROP TABLE IF EXISTS providers;\r
+
+      CREATE TABLE providers (\r
+
+      \  id numeric PRIMARY KEY,\r
+
+      \  name varchar(50),\r
+
+      \  street varchar(50),\r
+
+      \  city varchar(50),\r
+
+      \  state varchar(2)\r
+
+      );\r
+
+      \r
+
+      INSERT INTO providers (id, name, street, city, state)\r
+
+      VALUES \r
+
+      \  (1,\t'Henrique',\t'Av Brasil',\t'Rio de Janeiro',\t'RJ'),\r
+
+      \  (2,\t'Marcelo Augusto',\t'Rua Imigrantes',\t'Belo Horizonte',\t'MG'),\r
+
+      \  (3,\t'Caroline Silva',\t'Av São Paulo',\t'Salvador',\t'BA'),\r
+
+      \  (4,\t'Guilerme Staff',\t'Rua Central',\t'Porto Alegre',\t'RS'),\r
+
+      \  (5,\t'Isabela Moraes',\t'Av Juiz Grande',\t'Curitiba',\t'PR'),\r
+
+      \  (6,\t'Francisco Accerr',\t'Av Paulista',\t'São Paulo',\t'SP');"
+    languageId: oracle-sql
+  - kind: 2
+    value: "SELECT DISTINCT city\r
+
+      FROM providers\r
+
+      ORDER BY city"
+    languageId: oracle-sql
+  - kind: 2
+    value: DROP TABLE providers;
+    languageId: oracle-sql

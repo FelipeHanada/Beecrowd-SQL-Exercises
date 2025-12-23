@@ -1,0 +1,84 @@
+cells:
+  - kind: 1
+    value: https://judge.beecrowd.com/en/problems/view/2617
+    languageId: markdown
+  - kind: 2
+    value: "CREATE TABLE providers (\r
+
+      \  id numeric PRIMARY KEY,\r
+
+      \  name varchar(255),\r
+
+      \  street varchar(255),\r
+
+      \  city varchar(255),\r
+
+      \  state char(2)\r
+
+      );\r
+
+      \r
+
+      CREATE TABLE products (\r
+
+      \  id numeric PRIMARY KEY,\r
+
+      \  name varchar (255),\r
+
+      \  amount numeric,\r
+
+      \  price numeric,\r
+
+      \  id_providers numeric REFERENCES providers (id)\r
+
+      );\r
+
+      \r
+
+      \r
+
+      INSERT INTO providers (id, name, street, city, state)\r
+
+      VALUES\r
+
+      \  (1,\t'Ajax SA',\t'Presidente Castelo Branco',\t'Porto
+      Alegre',\t'RS'),\r
+
+      \  (2,\t'Sansul SA',\t'Av Brasil',\t'Rio de Janeiro',\t'RJ'),\r
+
+      \  (3,\t'South Chairs',\t'Av Moinho',\t'Santa Maria', \t'RS'),\r
+
+      \  (4,\t'Elon Electro',\t'Apolo',\t'São Paulo',\t'SP'),\r
+
+      \  (5,\t'Mike Electro',\t'Pedro da Cunha',\t'Curitiba',\t'PR');\r
+
+      \  \r
+
+      INSERT INTO products (id, name, amount, price, id_providers)\r
+
+      VALUES\r
+
+      \  (1,\t'Blue Chair',\t30,\t300.00,\t5),\r
+
+      \  (2,\t'Red Chair',\t50,\t2150.00,\t1),\r
+
+      \  (3,\t'Disney Wardrobe',\t400,\t829.50,\t4),\r
+
+      \  (4,\t'Blue Toaster',\t20,\t9.90,\t3),\r
+
+      \  (5,\t'Solar Panel',\t30,\t3000.25,\t4);"
+    languageId: oracle-sql
+  - kind: 2
+    value: "SELECT prod.name, prov.name\r
+
+      FROM products prod\r
+
+      \    JOIN providers prov ON (prod.id_providers = prov.id)\r
+
+      WHERE prov.name = 'Ajax SA'"
+    languageId: oracle-sql
+  - kind: 2
+    value: "DROP TABLE products;\r
+
+      DROP TABLE providers;"
+    languageId: oracle-sql

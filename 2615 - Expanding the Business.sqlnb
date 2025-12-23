@@ -1,0 +1,50 @@
+cells:
+  - kind: 1
+    value: https://judge.beecrowd.com/en/problems/view/2615
+    languageId: markdown
+  - kind: 2
+    value: "DROP TABLE IF EXISTS customers;\r
+
+      CREATE TABLE customers (\r
+
+      \  id numeric PRIMARY KEY,\r
+
+      \  name varchar(50),\r
+
+      \  street varchar(50),\r
+
+      \  city varchar(50)\r
+
+      );\r
+
+      \r
+
+      \r
+
+      INSERT INTO customers (id, name, street, city)\r
+
+      VALUES\r
+
+      \  (1,\t'Giovanna Goncalves Oliveira',\t'Rua Mato Grosso',\t'Canoas'),\r
+
+      \  (2, 'Kauã Azevedo Ribeiro',\t'Travessa Ibiá',\t'Uberlândia'),\r
+
+      \  (3,\t'Rebeca Barbosa Santos',\t'Rua Observatório
+      Meteorológico',\t'Salvador'),\r
+
+      \  (4,\t'Sarah Carvalho Correia',\t'Rua Antônio Carlos da
+      Silva',\t'Uberlândia'),\r
+
+      \  (5,\t'João Almeida Lima',\t'Rua Rio Taiuva',\t'Ponta Grossa'),\r
+
+      \  (6,\t'Diogo Melo Dias',\t'Rua Duzentos e Cinqüenta',\t'Várzea
+      Grande');"
+    languageId: oracle-sql
+  - kind: 2
+    value: "SELECT DISTINCT city\r
+
+      FROM customers"
+    languageId: oracle-sql
+  - kind: 2
+    value: DROP TABLE customers;
+    languageId: oracle-sql

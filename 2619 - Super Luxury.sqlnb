@@ -1,0 +1,123 @@
+cells:
+  - kind: 1
+    value: https://judge.beecrowd.com/en/problems/view/2619
+    languageId: markdown
+  - kind: 2
+    value: "CREATE TABLE providers (\r
+
+      \  id numeric PRIMARY KEY,\r
+
+      \  name varchar(255),\r
+
+      \  street varchar(255),\r
+
+      \  city varchar(255),\r
+
+      \  state char(2)\r
+
+      );\r
+
+      \r
+
+      CREATE TABLE categories (\r
+
+      \  id numeric PRIMARY KEY,\r
+
+      \  name varchar(255)\r
+
+      );\r
+
+      \r
+
+      CREATE TABLE products (\r
+
+      \  id numeric PRIMARY KEY,\r
+
+      \  name varchar (255),\r
+
+      \  amount numeric,\r
+
+      \  price numeric,\r
+
+      \  id_providers numeric REFERENCES providers (id),\r
+
+      \  id_categories numeric REFERENCES categories (id)\r
+
+      );\r
+
+      \r
+
+      \r
+
+      INSERT INTO providers (id, name, street, city, state)\r
+
+      VALUES\r
+
+      \  (1,\t'Ajax SA',\t'Rua Presidente Castelo Branco',\t'Porto
+      Alegre',\t'RS'),\r
+
+      \  (2,\t'Sansul SA',\t'Av Brasil',\t'Rio de Janeiro',\t'RJ'),\r
+
+      \  (3,\t'South Chairs',\t'Rua do Moinho',\t'Santa Maria',\t'RS'),\r
+
+      \  (4,\t'Elon Electro',\t'Rua Apolo',\t'São Paulo',\t'SP'),\r
+
+      \  (5,\t'Mike electro',\t'Rua Pedro da Cunha',\t'Curitiba',\t'PR');\r
+
+      \  \r
+
+      INSERT INTO categories (id, name)\r
+
+      VALUES\r
+
+      \  (1,\t'Super Luxury'),\r
+
+      \  (2,\t'Imported'),\r
+
+      \  (3,\t'Tech'),\r
+
+      \  (4,\t'Vintage'),\r
+
+      \  (5,\t'Supreme');\r
+
+      \  \r
+
+      INSERT INTO products ( id, name, amount, price, id_providers,
+      id_categories)\r
+
+      VALUES\r
+
+      \  (1,\t'Blue Chair',\t30,\t300.00,\t5,\t5),\r
+
+      \  (2,\t'Red Chair',\t50,\t2150.00,\t2,\t1),\r
+
+      \  (3,\t'Disney Wardrobe',\t400,\t829.50,\t4,\t1),\r
+
+      \  (4,\t'Blue Toaster',\t20,\t9.90,\t3,\t1),\r
+
+      \  (5,\t'TV',\t30,\t3000.25,\t2,\t2);"
+    languageId: oracle-sql
+  - kind: 2
+    value: "SELECT prod.name, prov.name, prod.price\r
+
+      FROM products prod\r
+
+      \    JOIN providers prov\r
+
+      \        ON (prod.id_providers = prov.id)\r
+
+      \    JOIN categories cat\r
+
+      \        ON (prod.id_categories = cat.id)\r
+
+      WHERE cat.name = 'Super Luxury'\r
+
+      \    AND prod.price > 1000"
+    languageId: oracle-sql
+  - kind: 2
+    value: "DROP TABLE products;\r
+
+      DROP TABLE categories;\r
+
+      DROP TABLE providers;"
+    languageId: oracle-sql

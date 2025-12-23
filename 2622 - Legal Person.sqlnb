@@ -1,0 +1,79 @@
+cells:
+  - kind: 1
+    value: https://judge.beecrowd.com/en/problems/view/2622
+    languageId: markdown
+  - kind: 2
+    value: "CREATE TABLE customers (\r
+
+      \  id numeric PRIMARY KEY,\r
+
+      \  name varchar(255),\r
+
+      \  street varchar(255),\r
+
+      \  city varchar(255),\r
+
+      \  state char(2),\r
+
+      \  credit_limit numeric\r
+
+      );\r
+
+      \r
+
+      CREATE TABLE legal_person (\r
+
+      \  id_customers numeric REFERENCES customers (id),\r
+
+      \  cnpj char (18),\r
+
+      \  contact varchar(255)\r
+
+      );\r
+
+      \r
+
+      INSERT INTO customers (id, name, street, city, state, credit_limit)\r
+
+      VALUES\r
+
+      \  (1,\t'Nicolas Diogo Cardoso',\t'Acesso Um',\t'Porto
+      Alegre',\t'RS',\t475),\r
+
+      \  (2,\t'Cecília Olivia Rodrigues',\t'Rua Sizuka
+      Usuy',\t'Cianorte',\t'PR',\t3170),\r
+
+      \  (3,\t'Augusto Fernando Carlos Eduardo Cardoso',\t'Rua Baldomiro
+      Koerich',\t'Palhoça',\t'SC',\t1067),\r
+
+      \  (4,\t'Nicolas Diogo Cardoso',\t'Acesso Um',\t'Porto
+      Alegre',\t'RS',\t475),\r
+
+      \  (5,\t'Sabrina Heloisa Gabriela Barros',\t'Rua Engenheiro Tito Marques
+      Fernandes',\t'Porto Alegre',\t'RS',\t4312),\r
+
+      \  (6,\t'Joaquim Diego Lorenzo Araújo',\t'Rua Vitorino',\t'Novo
+      Hamburgo',\t'RS',\t2314);\r
+
+      \  \r
+
+      INSERT INTO legal_person (id_customers, cnpj, contact)\r
+
+      VALUES\r
+
+      \  (4,\t'85883842000191',\t'99767-0562'),\r
+
+      \  (5,\t'47773848000117',\t'99100-8965');"
+    languageId: oracle-sql
+  - kind: 2
+    value: "SELECT name\r
+
+      FROM customers\r
+
+      \    JOIN legal_person ON (id = id_customers)"
+    languageId: oracle-sql
+  - kind: 2
+    value: "DROP TABLE legal_person;\r
+
+      DROP TABLE customers;"
+    languageId: oracle-sql

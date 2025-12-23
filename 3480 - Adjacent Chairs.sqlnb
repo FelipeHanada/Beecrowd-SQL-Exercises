@@ -1,0 +1,98 @@
+cells:
+  - kind: 1
+    value: https://judge.beecrowd.com/en/problems/view/3480
+    languageId: markdown
+  - kind: 2
+    value: "CREATE TABLE chairs (\r
+
+      \    id NUMERIC PRIMARY KEY,\r
+
+      \    queue NUMERIC,\r
+
+      \    available BOOLEAN\r
+
+      );\r
+
+      \r
+
+      INSERT INTO chairs VALUES\r
+
+      \    (1,\t1,\tFALSE),\r
+
+      \    (2,\t1,\tFALSE),\r
+
+      \    (3,\t1,\tTRUE),\r
+
+      \    (4,\t1,\tFALSE),\r
+
+      \    (5,\t1,\tFALSE),\r
+
+      \    (6,\t1,\tFALSE),\r
+
+      \    (7,\t1,\tTRUE),\r
+
+      \    (8,\t1,\tTRUE),\r
+
+      \    (9,\t2,\tTRUE),\r
+
+      \    (10,\t2,\tFALSE),\r
+
+      \    (11,\t2,\tTRUE),\r
+
+      \    (12,\t2,\tTRUE),\r
+
+      \    (13,\t2,\tFALSE),\r
+
+      \    (14,\t2,\tTRUE),\r
+
+      \    (15,\t2,\tTRUE),\r
+
+      \    (16,\t2,\tFALSE),\r
+
+      \    (17,\t3,\tTRUE),\r
+
+      \    (18,\t3,\tFALSE),\r
+
+      \    (19,\t3,\tTRUE),\r
+
+      \    (20,\t3,\tFALSE),\r
+
+      \    (21,\t3,\tTRUE),\r
+
+      \    (22,\t3,\tTRUE),\r
+
+      \    (23,\t3,\tFALSE),\r
+
+      \    (24,\t3,\tFALSE),\r
+
+      \    (25,\t4,\tTRUE),\r
+
+      \    (26,\t4,\tFALSE),\r
+
+      \    (27,\t4,\tFALSE),\r
+
+      \    (28,\t4,\tTRUE),\r
+
+      \    (29,\t4,\tTRUE),\r
+
+      \    (30,\t4,\tFALSE),\r
+
+      \    (31,\t4,\tFALSE),\r
+
+      \    (32,\t4,\tTRUE);"
+    languageId: oracle-sql
+  - kind: 2
+    value: "SELECT c1.queue,\r
+
+      \    c1.id AS left,\r
+
+      \    c2.id AS right\r
+
+      FROM chairs c1 JOIN chairs c2 ON (c1.queue = c2.queue AND c1.id + 1 =
+      c2.id)\r
+
+      WHERE c1.available AND c2.available"
+    languageId: oracle-sql
+  - kind: 2
+    value: DROP TABLE chairs;
+    languageId: oracle-sql

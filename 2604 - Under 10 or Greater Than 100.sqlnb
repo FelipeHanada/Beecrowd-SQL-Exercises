@@ -1,0 +1,45 @@
+cells:
+  - kind: 1
+    value: https://judge.beecrowd.com/en/problems/view/2604
+    languageId: markdown
+  - kind: 2
+    value: "CREATE TABLE products (\r
+
+      \  id NUMERIC PRIMARY KEY,\r
+
+      \  name CHARACTER VARYING (255),\r
+
+      \  amount NUMERIC,\r
+
+      \  price NUMERIC\r
+
+      );\r
+
+      \r
+
+      INSERT INTO products (id, name, amount, price)\r
+
+      VALUES \r
+
+      \  (1,\t'Two-door wardrobe',\t100,\t80),\r
+
+      \  (2,\t'Dining table',\t1000,\t560),\r
+
+      \  (3,\t'Towel holder',\t10000,\t5.50),\r
+
+      \  (4,\t'Computer desk',\t350,\t100),\r
+
+      \  (5,\t'Chair',\t3000,\t210.64),\r
+
+      \  (6,\t'Single bed',\t750,\t99);"
+    languageId: oracle-sql
+  - kind: 2
+    value: "SELECT id, name\r
+
+      FROM products\r
+
+      WHERE price < 10 OR price > 100"
+    languageId: oracle-sql
+  - kind: 2
+    value: DROP TABLE products;
+    languageId: oracle-sql

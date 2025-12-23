@@ -1,0 +1,93 @@
+cells:
+  - kind: 1
+    value: https://judge.beecrowd.com/en/problems/view/3481
+    languageId: markdown
+  - kind: 2
+    value: "CREATE TABLE nodes (\r
+
+      \    node_id NUMERIC,\r
+
+      \    pointer NUMERIC\r
+
+      );\r
+
+      \r
+
+      INSERT INTO nodes VALUES\r
+
+      \    (50, 30),\r
+
+      \    (50, 75),\r
+
+      \    (30, 15),\r
+
+      \    (30, 35),\r
+
+      \    (15, 1),\r
+
+      \    (15, 20),\r
+
+      \    (35, 32),\r
+
+      \    (35, 40),\r
+
+      \    (1, null),\r
+
+      \    (20, null),\r
+
+      \    (32, null),\r
+
+      \    (40, null),\r
+
+      \    (75, 60),\r
+
+      \    (75, 90),\r
+
+      \    (60, 55),\r
+
+      \    (60, 70),\r
+
+      \    (90, 80),\r
+
+      \    (90, 95),\r
+
+      \    (55, null),\r
+
+      \    (70, null),\r
+
+      \    (80, null),\r
+
+      \    (95, null);"
+    languageId: oracle-sql
+  - kind: 2
+    value: "WITH parented_nodes AS (\r
+
+      \    SELECT DISTINCT pointer AS node_id\r
+
+      \    FROM nodes\r
+
+      \    WHERE pointer IS NOT NULL\r
+
+      )\r
+
+      SELECT DISTINCT\r
+
+      \    node_id,\r
+
+      \    CASE\r
+
+      \        WHEN node_id NOT IN (SELECT * FROM parented_nodes) THEN 'ROOT'\r
+
+      \        WHEN pointer IS NULL THEN 'LEAF'\r
+
+      \        ELSE 'INNER'\r
+
+      \    END AS type\r
+
+      FROM nodes\r
+
+      ORDER BY node_id;"
+    languageId: oracle-sql
+  - kind: 2
+    value: DROP TABLE nodes;
+    languageId: oracle-sql

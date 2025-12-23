@@ -1,0 +1,39 @@
+cells:
+  - kind: 1
+    value: https://judge.beecrowd.com/en/problems/view/2746
+    languageId: markdown
+  - kind: 2
+    value: "CREATE TABLE virus (\r
+
+      \  id INTEGER,\r
+
+      \  name VARCHAR(255)\r
+
+      );\r
+
+      \r
+
+      \r
+
+      INSERT INTO virus(id, name)\r
+
+      VALUES \r
+
+      \      (1, 'H1RT'),\r
+
+      \      (2, 'H7H1'),\r
+
+      \      (3, 'HUN8'),\r
+
+      \      (4, 'XH1HX'),\r
+
+      \      (5, 'XXXX');"
+    languageId: oracle-sql
+  - kind: 2
+    value: "SELECT REPLACE(name, 'H1', 'X')\r
+
+      FROM virus"
+    languageId: oracle-sql
+  - kind: 2
+    value: DROP TABLE virus;
+    languageId: oracle-sql

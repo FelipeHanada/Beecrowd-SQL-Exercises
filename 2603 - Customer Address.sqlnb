@@ -1,0 +1,50 @@
+cells:
+  - kind: 1
+    value: https://judge.beecrowd.com/en/problems/view/2603
+    languageId: markdown
+  - kind: 2
+    value: "CREATE TABLE customers (\r
+
+      \    id NUMERIC PRIMARY KEY,\r
+
+      \    name CHARACTER VARYING (255),\r
+
+      \    street CHARACTER VARYING (255),\r
+
+      \    city CHARACTER VARYING (255),\r
+
+      \    state CHAR (2),\r
+
+      \    credit_limit NUMERIC\r
+
+      );\r
+
+      \r
+
+      INSERT INTO customers VALUES\r
+
+      \    (1,\t'Pedro Augusto da Rocha',\t'Rua Pedro Carlos Hoffman',\t'Porto
+      Alegre',\t'RS',\t700.00),\r
+
+      \    (2,\t'Antonio Carlos Mamel',\t'Av. Pinheiros',\t'Belo
+      Horizonte',\t'MG',\t3500.50),\t\r
+
+      \    (3,\t'Luiza Augusta Mhor,',\t'Rua Salto
+      Grande',\t'Niteroi',\t'RJ',\t4000.00),\r
+
+      \    (4,\t'Jane Ester',\t'Av 7 de
+      setembro',\t'Erechim',\t'RS',\t800.00),\r
+
+      \    (5,\t'Marcos Antônio dos Santos',\t'Av Farrapos',\t'Porto
+      Alegre',\t'RS',\t4250.25);"
+    languageId: oracle-sql
+  - kind: 2
+    value: "SELECT name, street\r
+
+      FROM customers\r
+
+      WHERE city = 'Porto Alegre'"
+    languageId: oracle-sql
+  - kind: 2
+    value: DROP TABLE customers;
+    languageId: oracle-sql
